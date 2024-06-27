@@ -1,0 +1,6 @@
+@Api.Microservice.Libro_HostAddress = http://localhost:5152
+
+GET {{Api.Microservice.Libro_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
