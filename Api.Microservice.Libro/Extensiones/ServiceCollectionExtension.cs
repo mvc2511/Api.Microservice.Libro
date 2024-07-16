@@ -28,18 +28,10 @@ namespace Api.Microservice.Libro.Extensiones
                 options.AddPolicy("AllowSpecificOrigin",
                     builder =>
                     {
-                        builder.WithOrigins("https://example.com", "https://another-example.com")
-                        .AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowCredentials();
-                    });
-
-                options.AddPolicy("AllowAll",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
+                        builder.WithOrigins("https://example.com", "https://another-example.com", "http://localhost:3000")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
                     });
             });
 

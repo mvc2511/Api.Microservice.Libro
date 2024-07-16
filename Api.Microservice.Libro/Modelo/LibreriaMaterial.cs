@@ -9,6 +9,8 @@ namespace Api.Microservice.Libro.Modelo
 
         public string Titulo { get; set; }
 
+        public double Precio {  get; set; }
+
         public DateTime? FechaPublicacion { get; set; }
 
         public Guid? AutorLibro { get; set; }
