@@ -28,7 +28,7 @@ namespace Api.Microservice.Libro.Controllers
             return await _mediator.Send(new Consulta.Ejecuta());
         }
 
-        [HttpPost("id")] 
+        [HttpGet("id")] 
         public async Task<ActionResult<LibroMaterialDto>> GetLibroUnico(Guid id)
         {
             return await _mediator.Send(new ConsultarFiltro.LibroUnico
