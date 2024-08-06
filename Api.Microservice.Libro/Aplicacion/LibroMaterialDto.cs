@@ -11,5 +11,9 @@
         public DateTime? FechaPublicacion { get; set; }
 
         public Guid? AutorLibro { get; set; }
+
+        public IFormFile Imagen { get; set; }
+
+        public byte[] Imagenes { get; set; }
     }
 }

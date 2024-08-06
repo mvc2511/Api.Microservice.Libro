@@ -11,7 +11,6 @@ namespace Api.Microservice.Libro.Aplicacion
     {
         public class LibroUnico : IRequest<LibroMaterialDto>
         {
-
             public Guid? LibroId { get; set; }
         }
 
@@ -25,14 +24,15 @@ namespace Api.Microservice.Libro.Aplicacion
                 _contexto = contexto;
                 _mapper = mapper;
             }
-
             public async Task<LibroMaterialDto> Handle(LibroUnico request, CancellationToken cancellationToken)
             {
-                var libro = await _contexto.LibreriasMaterial.
-                    Where(x => x.LibreriaMaterialId == request.LibroId).FirstOrDefaultAsync();
+                var libro = await _contexto.LibreriasMaterial
+                .Where(p => p.LibreriaMaterialId == request.LibroId).FirstOrDefaultAsync();
+
                 if (libro == null)
                 {
                     throw new Exception("No se encontro el libro");
+
                 }
                 var libroDto = _mapper.Map<LibreriaMaterial, LibroMaterialDto>(libro);
                 return libroDto;

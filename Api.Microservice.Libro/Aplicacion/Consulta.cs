@@ -13,13 +13,14 @@ namespace Api.Microservice.Libro.Aplicacion
             public Ejecuta()
             {
 
+
             }
         }
 
         public class Manejador : IRequestHandler<Ejecuta, List<LibroMaterialDto>>
         {
-            private readonly ContextoLibreria _contexto;
             private readonly IMapper _mapper;
+            private readonly ContextoLibreria _contexto;
 
             public Manejador(ContextoLibreria contexto, IMapper mapper)
             {
@@ -33,6 +34,11 @@ namespace Api.Microservice.Libro.Aplicacion
                 var librosDto = _mapper.Map<List<LibreriaMaterial>, List<LibroMaterialDto>>(libros);
                 return librosDto;
             }
+
         }
+
+
+
+
     }
 }

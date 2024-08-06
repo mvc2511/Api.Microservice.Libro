@@ -14,5 +14,7 @@ namespace Api.Microservice.Libro.Modelo
         public DateTime? FechaPublicacion { get; set; }
 
         public Guid? AutorLibro { get; set; }
+
+        public byte[] Imagen { get; set; }
     }
 }
